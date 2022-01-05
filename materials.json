@@ -1,0 +1,21 @@
+{
+  "materials": [
+    {
+    "id": 1,
+    "name": "KD SOLID STUD 2X4X92-5/8",
+    "unit_cost": 2.04,
+    "qty_uom": null
+  },
+  {
+    "id": 2,
+    "name": "KD SOLID STUD 2X4X104-5/8",
+    "unit_cost": 2.47,
+    "qty_uom": null
+  },
+  {
+    "id": 3,
+    "name": "STD & BTR KDDF 2X4X14",
+    "unit_cost": 4.25,
+    "qty_uom": null
+  }]
+}
