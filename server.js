@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001; //Line 3
 const materials = require('./materials.json');
 const path = require('path');
 
-let root = path.join(__dirname, '..', '/client/build');
+let root = path.join(__dirname, '../client/build');
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
@@ -18,5 +18,5 @@ app.get('/express_backend', (req, res) => {
 }); //Line 11
 
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root });
+  res.sendFile('client/build/index.html', { root });
 });
