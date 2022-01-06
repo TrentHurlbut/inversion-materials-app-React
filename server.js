@@ -18,5 +18,5 @@ app.get('/express_backend', (req, res) => {
 }); //Line 11
 
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root });
+  res.sendFile('index.html');
 });
