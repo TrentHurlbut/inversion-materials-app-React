@@ -4,9 +4,9 @@ const port = process.env.PORT || 3001; //Line 3
 const materials = require('./materials.json');
 const path = require('path');
 
-let root = path.join(__dirname, '../client/build');
+let root = path.join(__dirname, 'client', 'build');
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(root));
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
@@ -18,5 +18,5 @@ app.get('/express_backend', (req, res) => {
 }); //Line 11
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.resolve('index.html', { root }));
 });
