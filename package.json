@@ -17,5 +17,6 @@
   },
   "engines": {
     "node": "17.x"
-  }
+  },
+  "homepage": "https://inversion-cost-estimator.herokuapp.com/"
 }
