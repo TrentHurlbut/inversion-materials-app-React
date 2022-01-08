@@ -36,6 +36,27 @@ app.post('/add_material', async (req, res) => {
       console.log('File written successfully!');
     }
   });
+  await res.send(dataObj);
+});
 
+app.post('/delete_material', async (req, res) => {
+  let data = fs.readFileSync('materials.json');
+  let dataObj = JSON.parse(data);
+  console.log(req.query.name);
+  for (let i = 0; i < dataObj.materials.length; i++) {
+    if (dataObj.materials[i].name === req.query.name) {
+      console.log(dataObj.materials[i].name);
+      dataObj.materials.splice(i, 1);
+    }
+  }
+  let stringData = JSON.stringify(dataObj);
+
+  fs.writeFile('materials.json', stringData, 'utf-8', (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Entry deleted successfully!');
+    }
+  });
   await res.send(dataObj);
 });
