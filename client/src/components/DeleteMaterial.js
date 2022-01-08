@@ -42,7 +42,7 @@ export default function DeleteMaterials({ updateHandler, materialArray }) {
   return (
     <>
       <button onClick={toggleExpanded}>
-        {expanded ? 'Collapse' : 'Delete Materials'}
+        {expanded ? 'Collapse' : 'Delete Material'}
       </button>
       {expanded && (
         <form id="delete-material-form" onSubmit={deleteMat}>
