@@ -27,7 +27,10 @@ export default function AddMaterial({ updateHandler }) {
         qty_uom: matQtyUom
       }
     })
-      .then((res) => updateHandler(res.data.materials))
+      .then((res) => {
+        updateHandler(res.data.materials);
+        setExpanded(false);
+      })
       .catch((err) => console.log(err));
   };
 
