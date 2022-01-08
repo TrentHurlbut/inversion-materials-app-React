@@ -60,6 +60,7 @@ export default function AddMaterial({ updateHandler }) {
             }}
             required
           />
+          <label for="mat-price">Unit Cost</label>
           <input
             id="mat-price"
             type="text"

@@ -6,7 +6,11 @@ export default function ShowMaterials({ materialArray }) {
   let materials = [];
 
   for (let i = 0; i < materialArray.length; i++) {
-    materials.push(<p key={i}>{materialArray[i].name}</p>);
+    materials.push(
+      <p key={i}>
+        {materialArray[i].name}, Unit Cost: {materialArray[i].unit_cost}
+      </p>
+    );
   }
 
   const toggleExpanded = () => {

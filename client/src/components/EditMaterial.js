@@ -73,7 +73,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
           >
             {materials}
           </select>
-          <lable for="mat-name">New Material Name</lable>
+          <label for="mat-name">New Material Name</label>
           <input
             id="mat-name"
             type="text"
@@ -84,7 +84,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
             }}
             required
           />
-          <lable for="mat-price">New Material Price</lable>
+          <label for="mat-price">New Material Price</label>
           <input
             id="mat-price"
             type="text"
@@ -95,7 +95,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
             }}
             required
           />
-          <lable for="qty-uom">New Quantity Unit-of-Measurement</lable>
+          <label for="qty-uom">New Quantity Unit-of-Measurement</label>
           <input
             id="qty-uom"
             type="text"

@@ -40,10 +40,12 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Inversion Design Build Cost Estimator</h1>
       </header>
-      <ShowMaterials materialArray={data} />
-      <AddMaterial updateHandler={updateHandler} />
-      <DeleteMaterials updateHandler={updateHandler} materialArray={data} />
-      <EditMaterial updateHandler={updateHandler} materialArray={data}/>
+      <div className="body-components">
+        <ShowMaterials materialArray={data} />
+        <AddMaterial updateHandler={updateHandler} />
+        <DeleteMaterials updateHandler={updateHandler} materialArray={data} />
+        <EditMaterial updateHandler={updateHandler} materialArray={data}/>
+      </div>
     </div>
   );
 }
