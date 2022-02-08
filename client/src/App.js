@@ -4,7 +4,8 @@ import axios from 'axios';
 import ShowMaterials from './components/ShowMaterials';
 import AddMaterial from './components/AddMaterial';
 import DeleteMaterials from './components/DeleteMaterial';
-import EditMaterial from './components/EditMaterial'
+import EditMaterial from './components/EditMaterial';
+import FileUploadForm from './components/FileUploadForm';
 
 function App() {
   const [data, setData] = useState([]);
@@ -44,8 +45,9 @@ function App() {
         <ShowMaterials materialArray={data} />
         <AddMaterial updateHandler={updateHandler} />
         <DeleteMaterials updateHandler={updateHandler} materialArray={data} />
-        <EditMaterial updateHandler={updateHandler} materialArray={data}/>
+        <EditMaterial updateHandler={updateHandler} materialArray={data} />
       </div>
+      <FileUploadForm />
     </div>
   );
 }
