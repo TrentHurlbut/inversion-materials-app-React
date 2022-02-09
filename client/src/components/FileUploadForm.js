@@ -1,15 +1,20 @@
-import { useForm } from "react-hook-form";
+import { useState } from 'react';
 
 export default function FileUploadForm() {
-  const { register, handleSubmit } = useForm() 
+  const [dataFile, setDataFile] = useState({});
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
+
+  const dataFileHandler = (e) => {
+    e.preventDefault();
+    setDataFile(e.target.files);
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input ref={register} type="file" name="picture" />
+    <form onSubmit={console.log(dataFile)}>
+      <input type="file" name="picture" onChange={dataFileHandler} />
       <button>Submit</button>
     </form>
   );
