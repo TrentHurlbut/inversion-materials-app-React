@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import xlsx from 'xlsx';
+import Button from '@mui/material/Button';
 
 export default function FileUploadForm() {
-  const [dataFile, setDataFile] = useState({});
+  const [dataFile, setDataFile] = useState([]);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -24,13 +25,19 @@ export default function FileUploadForm() {
         const worksheet = workbook.Sheets[sheetName];
         const json = xlsx.utils.sheet_to_json(worksheet);
         console.log(json);
+        setDataFile(json);
       };
       reader.readAsArrayBuffer(e.target.files[0]);
     }
   };
 
   return (
-    <form onSubmit={console.log(dataFile)}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log(dataFile);
+      }}
+    >
       <input type="file" name="picture" onChange={readUploadFile} />
       <button>Submit</button>
     </form>
