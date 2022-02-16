@@ -56,3 +56,11 @@ input {
   margin-left: 8px;
   margin-right: 8px;
 }
+
+.menu-button {
+  margin: 15px !important;
+}
+
+#sheet-submit {
+  margin: 15px;
+}

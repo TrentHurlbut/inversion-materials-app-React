@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function AddMaterial({ updateHandler }) {
   const [expanded, setExpanded] = useState(false);
@@ -48,12 +50,12 @@ export default function AddMaterial({ updateHandler }) {
 
   return (
     <>
-      <button onClick={toggleExpanded}>
+      <Button onClick={toggleExpanded} className='menu-button'>
         {expanded ? 'Collapse' : 'Add Material'}
-      </button>
+      </Button>
       {expanded ? (
         <form id="material-form" onSubmit={addMat}>
-          <input
+          <TextField
             id="mat-name"
             type="text"
             placeholder="Material Name"
@@ -64,7 +66,7 @@ export default function AddMaterial({ updateHandler }) {
             required
           />
           <label for="mat-price">Unit Cost</label>
-          <input
+          <TextField
             id="mat-price"
             type="text"
             placeholder="Material Cost"
@@ -74,7 +76,7 @@ export default function AddMaterial({ updateHandler }) {
             }}
             required
           />
-          <input
+          <TextField
             id="qty_uom"
             type="text"
             placeholder="Quantity Unit of Measurement"
@@ -83,9 +85,9 @@ export default function AddMaterial({ updateHandler }) {
               matQtyUomFieldHandler(e);
             }}
           />
-          <button id="send-mat" type="submit">
+          <Button id="send-mat" type="submit">
             Submit Material
-          </button>
+          </Button>
         </form>
       ) : null}
     </>

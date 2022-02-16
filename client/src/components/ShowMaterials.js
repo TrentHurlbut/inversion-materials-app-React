@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 export default function ShowMaterials({ materialArray }) {
   const [expanded, setExpanded] = useState(false);
@@ -19,9 +20,9 @@ export default function ShowMaterials({ materialArray }) {
 
   return (
     <>
-      <button onClick={toggleExpanded}>
+      <Button onClick={toggleExpanded} className='menu-button'>
         {expanded ? 'Hide Materials' : 'Show Materials'}
-      </button>
+      </Button>
       {expanded ? materials : null}
     </>
   );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import xlsx from 'xlsx';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function FileUploadForm() {
   const [dataFile, setDataFile] = useState([]);
@@ -37,9 +38,10 @@ export default function FileUploadForm() {
         e.preventDefault();
         console.log(dataFile);
       }}
+      id='sheet-submit'
     >
-      <input type="file" name="picture" onChange={readUploadFile} />
-      <button>Submit</button>
+      <TextField type="file" name="picture" onChange={readUploadFile} />
+      <Button type="submit" className='menu-button'>Submit</Button>
     </form>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
 
 export default function DeleteMaterials({ updateHandler, materialArray }) {
   const [expanded, setExpanded] = useState(false);
@@ -44,9 +45,9 @@ export default function DeleteMaterials({ updateHandler, materialArray }) {
 
   return (
     <>
-      <button onClick={toggleExpanded}>
+      <Button onClick={toggleExpanded} className='menu-button'>
         {expanded ? 'Collapse' : 'Delete Material'}
-      </button>
+      </Button>
       {expanded && (
         <form id="delete-material-form" onSubmit={deleteMat}>
           <label for="materials">Choose a material to delete:</label>
@@ -57,7 +58,7 @@ export default function DeleteMaterials({ updateHandler, materialArray }) {
           >
             {materials}
           </select>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       )}
     </>

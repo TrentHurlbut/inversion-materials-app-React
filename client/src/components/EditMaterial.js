@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function EditMaterial({ updateHandler, materialArray }) {
   const [expanded, setExpanded] = useState(false);
@@ -62,9 +64,9 @@ export default function EditMaterial({ updateHandler, materialArray }) {
 
   return (
     <>
-      <button onClick={toggleExpanded}>
+      <Button onClick={toggleExpanded} className='menu-button'>
         {expanded ? 'Collapse' : 'Edit Material Entry'}
-      </button>
+      </Button>
       {expanded && (
         <form id="delete-material-form" onSubmit={deleteMat}>
           <label for="materials">Choose a material to edit:</label>
@@ -77,7 +79,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
             {materials}
           </select>
           <label for="mat-name">New Material Name</label>
-          <input
+          <TextField
             id="mat-name"
             type="text"
             placeholder="Material Name"
@@ -88,7 +90,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
             required
           />
           <label for="mat-price">New Material Price</label>
-          <input
+          <TextField
             id="mat-price"
             type="text"
             placeholder="Material Cost"
@@ -99,7 +101,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
             required
           />
           <label for="qty-uom">New Quantity Unit-of-Measurement</label>
-          <input
+          <TextField
             id="qty-uom"
             type="text"
             placeholder="Quantity Unit of Measurement"
@@ -108,7 +110,7 @@ export default function EditMaterial({ updateHandler, materialArray }) {
               newMatQtyUomFieldHandler(e);
             }}
           />
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       )}
     </>
